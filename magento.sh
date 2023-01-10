@@ -144,7 +144,7 @@ if  [ $option = "y" ] ; then
     cd /var/www/html/magento2
     
     sudo php bin/magento setup:install \
-    --base-url=http://192.168.0.38 \
+    --base-url=http://192.168.0.36 \
     --db-host=localhost \
     --db-name=magento2 \
     --db-user=magento2 \
@@ -162,7 +162,7 @@ if  [ $option = "y" ] ; then
     --elasticsearch-host=localhost \
     --elasticsearch-port=8080
         
-    sudo mysql -u magento2 -p'angelariel74' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.38' WHERE path='web/unsecure/base_url';"
+    sudo mysql -u magento2 -p'angelariel74' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.36' WHERE path='web/unsecure/base_url';"
     sudo php /var/www/html/magento2/bin/magento deploy:mode:set production
     sudo php /var/www/html/magento2/bin/magento cache:flush
     sudo chmod -R 777 /var/www/html/magento2/var
