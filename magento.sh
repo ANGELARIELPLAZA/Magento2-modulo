@@ -134,16 +134,17 @@ if  [ $option = "y" ] ; then
     composer
     
     echo "***************Magento**********************"
-    sudo rm -r /var/www/html/magento2
-    cd /var/www/html/
+    cd /var/www/html
+    sudo rm -r magento2
     sudo composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
-    
+    cd /var/www/html/magento2
     sudo find /var/www/html/magento2/var /var/www/html/magento2/generated /var/www/html/magento2/vendor /var/www/html/magento2/pub/static /var/www/html/magento2/pub/media  /var/www/html/magento2/app/etc -type f -exec chmod g+w {} +
     sudo find /var/www/html/magento2/var /var/www/html/magento2/generated /var/www/html/magento2/vendor /var/www/html/magento2/pub/static /var/www/html/magento2/pub/media  /var/www/html/magento2/app/etc -type d -exec chmod g+ws {} +
     sudo chown -R :www-data .
     sudo chmod u+x /var/www/html/magento2/bin/magento
+    cd /var/www/html/magento2
         
-    sudo php /var/www/html/magento2/bin/magento setup:install \
+    sudo php /bin/magento setup:install \
     --base-url=http://192.168.0.36 \
     --db-host=localhost \
     --db-name=magento2 \
