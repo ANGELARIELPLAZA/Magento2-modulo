@@ -172,7 +172,7 @@ if  [ $option = "y" ] ; then
     sudo apache2ctl configtest
     sudo systemctl restart apache2
     sudo mysql -u magento2 -p'admin1234' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.37' WHERE path='web/unsecure/base_url';"
-    sudo php /var/www/html/magento2/bin/magento deploy:mode:set production
+    sudo php /var/www/html/magento2/bin/magento deploy:mode:set developer
     sudo php /var/www/html/magento2/bin/magento cache:flush
     sudo chmod -R 777 /var/www/html/magento2/var
     sudo chmod -R 777 /var/www/html/magento2/pub/static
@@ -182,7 +182,7 @@ if  [ $option = "y" ] ; then
     sudo  php /var/www/html/magento2/bin/magento s:s:d -f
     sudo  php /var/www/html/magento2/bin/magento c:f
     sudo php /var/www/html/magento2/bin/magento module:disable Magento_TwoFactorAuth
-    
+    sudo cat /var/www/html/magento2/app/etc/env.php
 else
     exit
 fi
