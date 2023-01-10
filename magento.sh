@@ -135,7 +135,7 @@ if  [ $option = "y" ] ; then
     
     echo "***************Magento**********************"
     sudo rm -r /var/www/html/magento2
-    cd mkdir chmod +x  /var/www/html/
+    cd /var/www/html/
     sudo composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
     
     sudo find /var/www/html/magento2/var /var/www/html/magento2/generated /var/www/html/magento2/vendor /var/www/html/magento2/pub/static /var/www/html/magento2/pub/media  /var/www/html/magento2/app/etc -type f -exec chmod g+w {} +
