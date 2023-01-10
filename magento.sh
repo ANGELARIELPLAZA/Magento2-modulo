@@ -136,14 +136,15 @@ if  [ $option = "y" ] ; then
     echo "***************Magento**********************"
     sudo rm -r /var/www/html/magento2
     sudo composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
-    
+    cd /var/www/html/magento2
     sudo find /var/www/html/magento2/var /var/www/html/magento2/generated /var/www/html/magento2/vendor /var/www/html/magento2/pub/static /var/www/html/magento2/pub/media  /var/www/html/magento2/app/etc -type f -exec chmod g+w {} +
     sudo find /var/www/html/magento2/var /var/www/html/magento2/generated /var/www/html/magento2/vendor /var/www/html/magento2/pub/static /var/www/html/magento2/pub/media  /var/www/html/magento2/app/etc -type d -exec chmod g+ws {} +
     sudo chown -R :www-data .
     sudo chmod u+x /var/www/html/magento2/bin/magento
+    cd /var/www/html/magento2
     
-    sudo php /var/www/html/magento2/bin/magento setup:install \
-    --base-url=http://192.168.0.36 \
+    sudo php bin/magento setup:install \
+    --base-url=http://192.168.0.38 \
     --db-host=localhost \
     --db-name=magento2 \
     --db-user=magento2 \
@@ -161,8 +162,8 @@ if  [ $option = "y" ] ; then
     --elasticsearch-host=localhost \
     --elasticsearch-port=8080
         
-    sudo mysql -u magento2 -p'angelariel74' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.36' WHERE path='web/unsecure/base_url';"
-    sudo php /var/www/html/magento2/bin/magento deploy:mode:set developer
+    sudo mysql -u magento2 -p'angelariel74' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.38' WHERE path='web/unsecure/base_url';"
+    sudo php /var/www/html/magento2/bin/magento deploy:mode:set production
     sudo php /var/www/html/magento2/bin/magento cache:flush
     sudo chmod -R 777 /var/www/html/magento2/var
     sudo chmod -R 777 /var/www/html/magento2/pub/static
