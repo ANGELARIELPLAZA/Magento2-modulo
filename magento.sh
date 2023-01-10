@@ -2,7 +2,7 @@
 # Programa para instalar  apache
 #sudo apt -y update
 #sudo apt -y upgrade
-sudo apt -y install shfmt
+ sudo apt -y install shfmt
 #sudo rm /var/lib/dpkg/lock
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
@@ -13,20 +13,20 @@ echo "Hola bienvenido a la instalacion de magento2.4"
 read -p "Deseas continuar:[y/n]" option
 if  [ $option = "y" ] ; then
     
-    echo "***************APACHE**********************"
+    echo "\n***************APACHE**********************\n"
     sudo apt -y install apache2
-    echo " version instalada: "
+    echo "\n version instalada: \n"
     sudo apache2ctl -v
-    echo " Vamos a verificar el cortafuegos con los siguientes comandos, uno por uno: "
+    echo "\n Vamos a verificar el cortafuegos con los siguientes comandos, uno por uno: \n"
     sudo ufw app list
     sudo ufw allow 'Apache'
     sudo ufw status
-    echo " Vamos a verificar el servidor apache con los siguientes comandos: "
+    echo "\n Vamos a verificar el servidor apache con los siguientes comandos: \n"
     sudo systemctl start apache2
     sudo systemctl status --no-pager apache2
     sudo systemctl enable apache2
-    echo " Vamos a configurar nuestro Host Virtual, esto para asignarle un dominio, con los siguientes
-    comandos, tomaremos como nombre “magento2”: "
+    echo "\n Vamos a configurar nuestro Host Virtual, esto para asignarle un dominio, con los siguientes
+    comandos, tomaremos como nombre “magento2”: \n"
     if [ -d /var/www/html/magento2 ];
     then
         echo "Sí, sí existe /var/www/html/magento2."
@@ -64,8 +64,8 @@ if  [ $option = "y" ] ; then
     
     echo "***************MYSQL**********************"
     sudo apt  -y install mysql-server
-    mysql -u root -p'angelariel74' -e "CREATE USER magento2@localhost IDENTIFIED BY 'angelariel74'; ALTER USER 'magento2'@'localhost' IDENTIFIED WITH mysql_native_password BY 'angelariel74'; GRANT ALL PRIVILEGES ON *.* TO 'magento2'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES;"
-    mysql -u magento2 -p'angelariel74' -e "CREATE DATABASE magento2;"
+    mysql -u root -p'admin1234' -e "CREATE USER magento2@localhost IDENTIFIED BY 'admin1234'; ALTER USER 'magento2'@'localhost' IDENTIFIED WITH mysql_native_password BY 'admin1234'; GRANT ALL PRIVILEGES ON *.* TO 'magento2'@'localhost' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+    mysql -u magento2 -p'admin1234' -e "CREATE DATABASE magento2;"
     sudo apt -y update
     sudo apt -y install software-properties-common
     sudo add-apt-repository --yes ppa:ondrej/php
@@ -80,6 +80,7 @@ if  [ $option = "y" ] ; then
     <IfModule mod_dir.c>
     DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
     </IfModule>
+
     # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
     " >>/etc/apache2/mods-enabled/dir.conf
     
@@ -115,7 +116,6 @@ if  [ $option = "y" ] ; then
     </IfModule>
     # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
     " >>/etc/apache2/ports.conf
-
     sudo echo '<VirtualHost *:8080>
     ProxyPass "/" "http://localhost:9200/"
     ProxyPassReverse "/" "http://localhost:9200/"
@@ -143,18 +143,18 @@ if  [ $option = "y" ] ; then
     sudo chown -R :www-data .
     sudo chmod u+x /var/www/html/magento2/bin/magento
     cd /var/www/html/magento2
-        
-    sudo php /bin/magento setup:install \
+    
+    sudo php bin/magento setup:install \
     --base-url=http://192.168.0.36 \
     --db-host=localhost \
     --db-name=magento2 \
     --db-user=magento2 \
-    --db-password=angelariel74 \
+    --db-password=admin1234 \
     --admin-firstname=Admin \
     --admin-lastname=Admin \
-    --admin-email=anllelo13.plaza@gmail.com \
+    --admin-email=admin@admin.com \
     --admin-user=admin \
-    --admin-password=angelariel74 \
+    --admin-password=admin1234 \
     --language=en_US \
     --currency=USD \
     --timezone=America/Chicago \
@@ -162,8 +162,30 @@ if  [ $option = "y" ] ; then
     --search-engine=elasticsearch7 \
     --elasticsearch-host=localhost \
     --elasticsearch-port=8080
-        
-    sudo mysql -u magento2 -p'angelariel74' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.36' WHERE path='web/unsecure/base_url';"
+    
+    sudo rm /etc/apache2/sites-available/000-default.conf
+    sudo touch /etc/apache2/sites-available/000-default.conf
+    sudo chmod +x /etc/apache2/sites-available/000-default.conf
+    sudo echo -e "
+    <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName magento2
+        ServerAlias www.magento2
+        DocumentRoot /var/www/html/magento2/pub
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        <Directory "/var/www/html/magento2">
+                    AllowOverride all
+        </Directory>
+    </VirtualHost>
+    " >>/etc/apache2/sites-available/000-default.conf
+    cat /etc/apache2/sites-available/000-default.conf
+    
+    sudo a2ensite 000-default.conf
+    sudo apache2ctl configtest
+    sudo systemctl restart apache2
+    
+    sudo mysql -u magento2 -p'admin1234' -e "use magento2; UPDATE core_config_data SET value='http://192.168.0.36' WHERE path='web/unsecure/base_url';"
     sudo php /var/www/html/magento2/bin/magento deploy:mode:set production
     sudo php /var/www/html/magento2/bin/magento cache:flush
     sudo chmod -R 777 /var/www/html/magento2/var
