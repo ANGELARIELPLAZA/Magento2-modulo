@@ -17,7 +17,6 @@ sudo echo -e '<?xml version="1.0"?>
 
 
 #Step 3: Create etc/registration.php file
-sudo rm /var/www/html/magento2/app/code/Mageplaza/HelloWorld/registration.php
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/registration.php
 sudo echo -e "<?php
 \Magento\Framework\Component\ComponentRegistrar::register(
