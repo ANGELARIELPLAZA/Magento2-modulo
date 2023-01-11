@@ -9,21 +9,21 @@ sudo mkdir -p  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/fronten
 #Step 2: Create etc/module.xml file.
 sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
 
-sudo echo -e "<?xml version="1.0"?>
+sudo echo -e '<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Mageplaza_HelloWorld" setup_version="1.0.0">
     </module>
-</config>" >>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
+</config>'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
 
 
 #Step 3: Create etc/registration.php file
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/registration.php
-sudo echo -e "<?php
+sudo echo -e '<?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Mageplaza_HelloWorld',
     __DIR__
-);" >>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/registration.php
+);'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/registration.php
 
 #Step 4: Enable the module
 sudo php /var/www/html/magento2/bin/magento module:status
@@ -37,19 +37,19 @@ sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy -f
 #Step 1: Create routes.xml file
 sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/routes.xml
 
-sudo echo -e "<?xml version="1.0" ?>
+sudo echo -e '<?xml version="1.0" ?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:/var/www/html/magento2//var/www/html/magento2/app/etc/routes.xsd">
 <router id="standard">
 <route frontName="helloworld" id="helloworld">
 <module name="Mageplaza_HelloWorld"/>
 </route>
 </router>
-</config>" >> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/routes.xml
+</config>'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/routes.xml
 
 #Step 2: Create controller file
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
 
-sudo echo -e "<?php
+sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
@@ -68,25 +68,25 @@ class Index extends \Magento\Framework\App\Action\Action
     {
         return $this->_pageFactory->create();
     }
-}" >> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
+}'>> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
 
 #Step 3: Create controller Layout file
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/layout/helloworld_index_index.xml
-sudo echo -e "<?xml version="1.0"?>
+sudo echo -e '<?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <referenceContainer name="content">
 <block class="Mageplaza\HelloWorld\Block\Index" name="helloworld_index_index" template="Mageplaza_HelloWorld::index.phtml" />
 </referenceContainer>
-</page>" >> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/layout/helloworld_index_index.xml
+</page>'>> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/layout/helloworld_index_index.xml
 
 #Step 4: Create controller Block file
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Block/Index.php
-sudo echo -e "<?php
+sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Block;
 class Index extends \Magento\Framework\View\Element\Template
 {
     
-}" >> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Block/Index.php
+}' >>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Block/Index.php
 #Step 5: Create controller template file
 sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/templates/index.phtml
 sudo echo -e "<h2>Welcome to Mageplaza.com</h2>" >> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/templates/index.phtml
