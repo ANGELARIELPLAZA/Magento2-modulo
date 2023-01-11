@@ -23,8 +23,8 @@ sudo mv crud/Collection.php  /var/www/html/magento2/app/code/Mageplaza/HelloWorl
 #Step 5: Factory Object
 sudo rm /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
 sudo mv crud/Index.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
-sudo php /var/www/html/magento2/bin/magento setup:upgrade
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
+sudo php /var/www/html/magento2/bin/magento setup:upgrade
 sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en_US -f
 sudo php /var/www/html/magento2/bin/magento indexer:reindex
 sudo php /var/www/html/magento2/bin/magento cache:clean
