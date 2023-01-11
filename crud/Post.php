@@ -1,16 +1,16 @@
 <?php
-namespace Mageplaza\HelloWorld\Model;
+namespace Tresdadv\MiPrimerCrud\Model;
 class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
 {
-	const CACHE_TAG = 'mageplaza_helloworld_post';
+	const CACHE_TAG = 'Tresdadv_MiPrimerCrud_post';
 
-	protected $_cacheTag = 'mageplaza_helloworld_post';
+	protected $_cacheTag = 'Tresdadv_MiPrimerCrud_post';
 
-	protected $_eventPrefix = 'mageplaza_helloworld_post';
+	protected $_eventPrefix = 'Tresdadv_MiPrimerCrud_post';
 
 	protected function _construct()
 	{
-		$this->_init('Mageplaza\HelloWorld\Model\ResourceModel\Post');
+		$this->_init('Tresdadv\MiPrimerCrud\Model\ResourceModel\Post');
 	}
 
 	public function getIdentities()

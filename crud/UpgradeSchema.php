@@ -1,5 +1,5 @@
 <?php
-namespace Mageplaza\HelloWorld\Setup;
+namespace Tresdadv\MiPrimerCrud\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
 use Magento\Framework\Setup\SchemaSetupInterface;
@@ -13,9 +13,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
 		$installer->startSetup();
 
 		if(version_compare($context->getVersion(), '1.1.0', '<')) {
-			if (!$installer->tableExists('mageplaza_helloworld_post')) {
+			if (!$installer->tableExists('Tresdadv_MiPrimerCrud_post')) {
 				$table = $installer->getConnection()->newTable(
-					$installer->getTable('mageplaza_helloworld_post')
+					$installer->getTable('Tresdadv_MiPrimerCrud_post')
 				)
 					->addColumn(
 						'post_id',
@@ -87,9 +87,9 @@ class UpgradeSchema implements UpgradeSchemaInterface
 				$installer->getConnection()->createTable($table);
 
 				$installer->getConnection()->addIndex(
-					$installer->getTable('mageplaza_helloworld_post'),
+					$installer->getTable('Tresdadv_MiPrimerCrud_post'),
 					$setup->getIdxName(
-						$installer->getTable('mageplaza_helloworld_post'),
+						$installer->getTable('Tresdadv_MiPrimerCrud_post'),
 						['name','url_key','post_content','tags','featured_image'],
 						\Magento\Framework\DB\Adapter\AdapterInterface::INDEX_TYPE_FULLTEXT
 					),

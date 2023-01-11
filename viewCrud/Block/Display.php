@@ -1,11 +1,11 @@
 <?php
-namespace Mageplaza\HelloWorld\Block;
+namespace Tresdadv\MiPrimerCrud\Block;
 class Display extends \Magento\Framework\View\Element\Template
 {
 	protected $_postFactory;
 	public function __construct(
 		\Magento\Framework\View\Element\Template\Context $context,
-		\Mageplaza\HelloWorld\Model\PostFactory $postFactory
+		\Tresdadv\MiPrimerCrud\Model\PostFactory $postFactory
 	)
 	{
 		$this->_postFactory = $postFactory;

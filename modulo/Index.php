@@ -1,5 +1,5 @@
 <?php
-namespace Mageplaza\HelloWorld\Controller\Index;
+namespace Tresdadv\MiPrimerCrud\Controller\Index;
 
 class Index extends \Magento\Framework\App\Action\Action
 {

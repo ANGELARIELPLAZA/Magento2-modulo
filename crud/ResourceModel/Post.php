@@ -1,5 +1,5 @@
 <?php
-namespace Mageplaza\HelloWorld\Model\ResourceModel;
+namespace Tresdadv\MiPrimerCrud\Model\ResourceModel;
 
 
 class Post extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
@@ -14,7 +14,7 @@ class Post extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 	
 	protected function _construct()
 	{
-		$this->_init('mageplaza_helloworld_post', 'post_id');
+		$this->_init('Tresdadv_MiPrimerCrud_post', 'post_id');
 	}
 	
 }
