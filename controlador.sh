@@ -5,7 +5,6 @@ sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/
 sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/
 sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/
 sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
-sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
 #Step 1: Setup Script
 sudo mv crud/InstallSchema.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
 sudo rm /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/
