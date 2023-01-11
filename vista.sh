@@ -7,13 +7,13 @@ sudo mkdir -p /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Block/
 sudo mkdir -p /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/templates/
 
 #Step 1: Create controller
-sudo mv view/Display.php /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Controller/Index/
+sudo cp view/Display.php /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Controller/Index/
 #Step 2: Create layout file .xml
-sudo mv view/MiPrimerCrud_index_display.xml /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/layout/
+sudo cp view/MiPrimerCrud_index_display.xml /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/layout/
 #Step 3: Create block
-sudo mv view/Block/Display.php /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Block/
+sudo cp view/Block/Display.php /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Block/
 #Step 4. Create template file
-sudo mv view/sayhello.phtml /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/templates/
+sudo cp view/sayhello.phtml /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/templates/
 
 sudo php /var/www/html/magento2/bin/magento  module:enable Tresdadv_MiPrimerCrud
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
