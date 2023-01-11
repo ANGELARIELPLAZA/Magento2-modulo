@@ -38,7 +38,7 @@ sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy -f
 sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/routes.xml
 
 sudo echo -e '<?xml version="1.0" ?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:/var/www/html/magento2//var/www/html/magento2/app/etc/routes.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:/var/www/html/magento2/var/www/html/magento2/app/etc/routes.xsd">
 <router id="standard">
 <route frontName="helloworld" id="helloworld">
 <module name="Mageplaza_HelloWorld"/>
