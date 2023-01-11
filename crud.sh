@@ -105,7 +105,8 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 	}
 }
 '>> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
-
+sudo rm /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
+sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
 sudo echo -e '<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Mageplaza_HelloWorld" setup_version="1.1.0">
