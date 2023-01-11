@@ -1,7 +1,6 @@
 # !/bin/bash
 # Programa para hacer vistas
 sudo php /var/www/html/magento2/bin/magento  module:disable Tresdadv_MiPrimerCrud
-
 sudo mkdir -p /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/layout/
 sudo mkdir -p /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Block/
 sudo mkdir -p /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/view/frontend/templates/

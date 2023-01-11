@@ -21,6 +21,8 @@ sudo cp crud/Collection.php  /var/www/html/magento2/app/code/Tresdadv/MiPrimerCr
 #Step 5: Factory Object
 sudo rm /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Controller/Index/
 sudo cp crud/Index.php /var/www/html/magento2/app/code/Tresdadv/MiPrimerCrud/Controller/Index/
+
+sudo php /var/www/html/magento2/bin/magento  module:enable Tresdadv_MiPrimerCrud
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en_US -f
