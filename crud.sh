@@ -7,7 +7,7 @@ sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/Resour
 sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
 #Step 1: Setup Script
 sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
-sudo echo -e "<?php
+sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Setup;
 
 class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
@@ -104,7 +104,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 		$installer->endSetup();
 	}
 }
-" >> /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
+'>> /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
 
 sudo echo -e '<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -113,7 +113,7 @@ sudo echo -e '<?xml version="1.0"?>
 </config>'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
 
 sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
-sudo echo -e '<?php
+sudo echo -e "<?php
 namespace Mageplaza\HelloWorld\Setup;
 
 use Magento\Framework\Setup\UpgradeSchemaInterface;
@@ -216,7 +216,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
 
 		$installer->endSetup();
 	}
-}'>>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
+}">>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
 
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 #Step 2: Create Model
