@@ -1,12 +1,12 @@
 # !/bin/bash
 # Programa para hacer modulos
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
 #Step 1: Setup Script
-sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
+sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Setup;
 
@@ -104,7 +104,7 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
 		$installer->endSetup();
 	}
 }
-'>> /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
+'>> /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallSchema.php
 
 sudo echo -e '<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -112,7 +112,7 @@ sudo echo -e '<?xml version="1.0"?>
     </module>
 </config>'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
 
-sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
+sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
 sudo echo -e "<?php
 namespace Mageplaza\HelloWorld\Setup;
 
@@ -216,11 +216,11 @@ class UpgradeSchema implements UpgradeSchemaInterface
 
 		$installer->endSetup();
 	}
-}">>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
+}">>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeSchema.php
 
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 #Step 2: Create Model
-sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
+sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Model;
 class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
@@ -247,10 +247,10 @@ class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Fr
 
 		return $values;
 	}
-}'>>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
+}'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
 
 #Step 3: Create Resource Model
-sudo touch /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post.php
+sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Model\ResourceModel;
 
@@ -270,10 +270,10 @@ class Post extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 		$this->_init('mageplaza_helloworld_post', 'post_id');
 	}
 	
-}'>>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post.php
+}'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post.php
 
 #Step 4: Create Resource Model Collection
-sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/Collection.php
+sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/Collection.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Model\ResourceModel\Post;
 
@@ -294,11 +294,11 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
 	}
 
 }
-'>>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/Collection.php
+'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/ResourceModel/Post/Collection.php
 
 #Step 5: Factory Object
 
-sudo touch /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
+sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Controller\Index;
 
@@ -331,7 +331,7 @@ class Index extends \Magento\Framework\App\Action\Action
 		exit();
 		return $this->_pageFactory->create();
 	}
-}'>>/var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
+}'>>/var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php
 
 
 
