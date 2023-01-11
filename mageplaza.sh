@@ -1,10 +1,10 @@
 #Step 1: Create the folder of Hello World module
 cd /var/www/html/magento2/
-sudo mkdir -p /var/www/html/magento2//var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/
-sudo mkdir -p /var/www/html/magento2//var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
-sudo mkdir -p /var/www/html/magento2//var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/layout/
-sudo mkdir -p /var/www/html/magento2//var/www/html/magento2/app/code/Mageplaza/HelloWorld/Block/
-sudo mkdir -p  /var/www/html/magento2//var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/templates/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/layout/
+sudo mkdir -p /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Block/
+sudo mkdir -p  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/templates/
 
 #Step 2: Create etc/module.xml file.
 sudo touch  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/module.xml
