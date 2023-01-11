@@ -31,7 +31,7 @@ sudo mv modulo/index.phtml /var/www/html/magento2/app/code/Mageplaza/HelloWorld/
 #Step 6: Flush Magento cache
 sudo php /var/www/html/magento2/bin/magento cache:clean
 sudo php /var/www/html/magento2/bin/magento cache:flush
-sudo php /var/www/html/magento2/bin/magento cache:status
+sudo php /var/www/html/magento2/bin/magento module:status
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
 sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en_US -f
 sudo chown -R www-data:www-data /var/www/html/magento2/
