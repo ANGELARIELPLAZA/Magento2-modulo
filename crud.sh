@@ -220,7 +220,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
 
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 #Step 2: Create Model
-sudo mkdir -p /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
+sudo touch  /var/wwww/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
 sudo echo -e '<?php
 namespace Mageplaza\HelloWorld\Model;
 class Post extends \Magento\Framework\Model\AbstractModel implements \Magento\Framework\DataObject\IdentityInterface
