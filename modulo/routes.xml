@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:/var/www/html/magento2/var/www/html/magento2/app/etc/routes.xsd">
-<router id="standard">
-<route frontName="MiPrimerCrud" id="MiPrimerCrud">
-<module name="Tresdadv_MiPrimerCrud"/>
-</route>
-</router>
-</config>
