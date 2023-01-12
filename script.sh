@@ -35,7 +35,15 @@ sudo sed -i s/helloworld/$var3/g "controller/helloworld_index_index.xml"
 nombre="_index_index.xml"
 index="$var3$nombre"
 echo $index
-sudo mv   $index  controller/helloworld_index_index.xml
+cd controller
+sudo mv   helloworld_index_index.xml $index
+cd ..
+echo "editando el Block/Index.php"
+sudo sed -i s/Mageplaza/$var1/g "controller/Block/Index.php"
+sudo sed -i s/HelloWorld/$var2/g "controller/Block/Index.php"
+echo "editando el templates/index.phtml"
+sudo sed -i s/Mageplaza/$var1/g "controller/index.phtml"
+sudo sed -i s/HelloWorld/$var2/g "controller/index.phtml"
 
 
 sudo sed -i s/Mageplaza/$var1/g "model/3.model.sh"
