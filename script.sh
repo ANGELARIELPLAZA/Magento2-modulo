@@ -115,7 +115,9 @@ sudo sed -i s/HelloWorld/$var2/g "view/sayhello.phtml"
 
 
 echo "Ejecutando el modulo"
-sudo sh modulo/1.modulo.sh
+cd modulo 
+sudo sh 1.modulo.sh
+cd ..
 echo "http://192.168.0.37/$var2/index/test"
 
 #sudo sed -i s/$var1/Mageplaza/g "modulo/1.modulo.sh"
