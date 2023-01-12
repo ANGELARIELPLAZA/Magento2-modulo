@@ -123,7 +123,12 @@ sudo sed -i s/HelloWorld/$var2/g "view/sayhello.phtml"
 #sudo sed -i s/$var1/Mageplaza/g "view/4.view.sh"
 #sudo sed -i s/$var2/HelloWorld/g "view/4.view.sh"
 
-
+nombre="_index_index.xml"
+index="$var3$nombre"
+echo $index
+cd controller
+sudo mv   $index helloworld_index_index.xml
+cd ..
 sudo sed -i s/$var1/Mageplaza/g "modulo/1.modulo.sh"
 sudo sed -i s/$var2/HelloWorld/g "modulo/1.modulo.sh"
 sudo sed -i s/$var1/Mageplaza/g "modulo/module.xml"
@@ -137,13 +142,13 @@ sudo sed -i s/$var1/Mageplaza/g "modulo/Test.php"
 sudo sed -i s/$var2/HelloWorld/g "modulo/Test.php"
 sudo sed -i s/$var1/Mageplaza/g "controller/helloworld_index_index.xml"
 sudo sed -i s/$var2/HelloWorld/g "controller/helloworld_index_index.xml"
-sudo sed -i s/$var1minuscula/mageplaza/g "controller/$index"
-sudo sed -i s/$var2minuscula/helloworld/g "controller/$index"
-nombre="_index_index.xml"
+sudo sed -i s/$var1minuscula/mageplaza/g "controller/helloworld_index_index.xml"
+sudo sed -i s/$var2minuscula/helloworld/g "controller/helloworld_index_index.xml"
+nombre="_index_display.xml"
 index="$var3$nombre"
 echo $index
-cd controller
-sudo mv   $index helloworld_index_index.xml
+cd view
+sudo mv   $index helloworld_index_display.xml 
 cd ..
 sudo sed -i s/$var1/Mageplaza/g "controller/2.control.sh"
 sudo sed -i s/$var2/HelloWorld/g "controller/2.control.sh"
@@ -190,14 +195,8 @@ sudo sed -i s/$var1/Mageplaza/g "model/Index.php"
 sudo sed -i s/$var2/HelloWorld/g "model/Index.php"
 sudo sed -i s/$var1/Mageplaza/g "view/helloworld_index_display.xml"
 sudo sed -i s/$var2/HelloWorld/g "view/helloworld_index_display.xml"
-sudo sed -i s/$var1minuscula/mageplaza/g "view/$index"
-sudo sed -i s/$var2minuscula/helloworld/g "view/$index"
-nombre="_index_display.xml"
-index="$var3$nombre"
-echo $index
-cd view
-sudo mv   $index helloworld_index_display.xml 
-cd ..
+sudo sed -i s/$var1minuscula/mageplaza/g "view/helloworld_index_display.xml"
+sudo sed -i s/$var2minuscula/helloworld/g "view/helloworld_index_display.xml"
 sudo sed -i s/$var1/Mageplaza/g "view/4.view.sh"
 sudo sed -i s/$var2/HelloWorld/g "view/4.view.sh"
 sudo sed -i s/$var1/Mageplaza/g "view/Display.php"
