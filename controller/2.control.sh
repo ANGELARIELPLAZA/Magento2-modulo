@@ -2,6 +2,7 @@
 sudo php /var/www/html/magento2/bin/magento module:disable Mageplaza_HelloWorld
 sudo php /var/www/html/magento2/bin/magento module:status Mageplaza_HelloWorld
 #sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/routes.xml
+echo "Creando frontend/routes.xml"
 sudo cp routes.xml /var/www/html/magento2/app/code/Mageplaza/HelloWorld/etc/frontend/
 echo "Creando Index/Index.php"
 #sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Index.php

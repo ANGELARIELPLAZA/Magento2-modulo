@@ -2,7 +2,7 @@ read -p "Nombre del vendor: " var1
 read -p "Nombre del modulo: " var2
 read -p "Nombre del frontname: " var3
 
-echo "creando el modulo"
+echo "***************Editando el modulo***************"
 sudo sed -i s/Mageplaza/$var1/g "modulo/1.modulo.sh"
 sudo sed -i s/HelloWorld/$var2/g "modulo/1.modulo.sh"
 echo "editando el module.xml"
@@ -18,12 +18,26 @@ sudo sed -i s/helloworld/$var3/g "modulo/routes.xml"
 echo "editando el Test.php"
 sudo sed -i s/Mageplaza/$var1/g "modulo/Test.php"
 sudo sed -i s/HelloWorld/$var2/g "modulo/Test.php"
-
-
-
-
+echo "***************Editando el controller***************"
 sudo sed -i s/Mageplaza/$var1/g "controller/2.control.sh"
 sudo sed -i s/HelloWorld/$var2/g "controller/2.control.sh"
+echo "editando el routes.xml"
+sudo sed -i s/Mageplaza/$var1/g "controller/routes.xml"
+sudo sed -i s/HelloWorld/$var2/g "controller/routes.xml"
+sudo sed -i s/helloworld/$var3/g "controller/routes.xml"
+echo "editando el Index.php"
+sudo sed -i s/Mageplaza/$var1/g "controller/Index.php"
+sudo sed -i s/HelloWorld/$var2/g "controller/Index.php"
+echo "editando el helloworld_index_index.xml"
+sudo sed -i s/Mageplaza/$var1/g "controller/helloworld_index_index.xml"
+sudo sed -i s/HelloWorld/$var2/g "controller/helloworld_index_index.xml"
+sudo sed -i s/helloworld/$var3/g "controller/helloworld_index_index.xml"
+nombre="_index_index.xml"
+index="$var3$nombre"
+echo $index
+sudo mv   $index  controller/helloworld_index_index.xml
+
+
 sudo sed -i s/Mageplaza/$var1/g "model/3.model.sh"
 sudo sed -i s/HelloWorld/$var2/g "model/3.model.sh"
 sudo sed -i s/Mageplaza/$var1/g "view/4.view.sh"
