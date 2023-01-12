@@ -34,6 +34,8 @@ sudo mv   helloworld_index_index.xml $index
 cd ..
 sudo sed -i s/Mageplaza/$var1/g "controller/2.control.sh"
 sudo sed -i s/HelloWorld/$var2/g "controller/2.control.sh"
+sudo sed -i s/mageplaza/$var1minuscula/g "controller/2.control.sh"
+sudo sed -i s/helloworld/$var2minuscula/g "controller/2.control.sh"
 echo "editando el routes.xml"
 sudo sed -i s/Mageplaza/$var1/g "controller/routes.xml"
 sudo sed -i s/HelloWorld/$var2/g "controller/routes.xml"
