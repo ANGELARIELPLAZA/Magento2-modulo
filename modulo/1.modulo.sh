@@ -34,3 +34,4 @@ sudo chown -R www-data:www-data /var/www/html/magento2/
 sudo chmod 777 -R /var/www/html/magento2/
 
 #http://192.168.0.37/helloworld/index/test
+ 
