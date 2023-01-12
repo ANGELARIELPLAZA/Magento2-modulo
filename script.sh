@@ -1,8 +1,8 @@
 read -p "Nombre del vendor: " var1
 read -p "Nombre del modulo: " var2
 read -p "Nombre del frontname: " var3
-var1minuscula = var1; echo $variable | tr '[:upper:]' '[:lower:]'
-var2minuscula = var2; echo $variable | tr '[:upper:]' '[:lower:]'
+var1minuscula = var1; echo $var1minuscula | tr '[:upper:]' '[:lower:]'
+var2minuscula = var2; echo $var2minuscula | tr '[:upper:]' '[:lower:]'
 echo "***************Editando el modulo***************"
 sudo sed -i s/Mageplaza/$var1/g "modulo/1.modulo.sh"
 sudo sed -i s/HelloWorld/$var2/g "modulo/1.modulo.sh"
@@ -20,7 +20,7 @@ echo "editando el Test.php"
 sudo sed -i s/Mageplaza/$var1/g "modulo/Test.php"
 sudo sed -i s/HelloWorld/$var2/g "modulo/Test.php"
 echo "***************Editando el controller***************"
-echo "editando el helloworld_index_index.xml"
+echo "cambiando el nombre y editando  helloworld_index_index.xml"
 sudo sed -i s/Mageplaza/$var1/g "controller/helloworld_index_index.xml"
 sudo sed -i s/HelloWorld/$var2/g "controller/helloworld_index_index.xml"
 sudo sed -i s/mageplaza/$var1minuscula/g "controller/helloworld_index_index.xml"
@@ -89,7 +89,7 @@ echo "editando Index/Index.php"
 sudo sed -i s/Mageplaza/$var1/g "model/Index.php"
 sudo sed -i s/HelloWorld/$var2/g "model/Index.php"
 echo "***************Editando el VIEW***************"
-echo "layout/helloworld_index_display.xml"
+echo "cambiando el nombre y editando el layout/helloworld_index_display.xml"
 sudo sed -i s/Mageplaza/$var1/g "view/helloworld_index_display.xml"
 sudo sed -i s/HelloWorld/$var2/g "view/helloworld_index_display.xml"
 sudo sed -i s/mageplaza/$var1minuscula/g "view/helloworld_index_display.xml"
@@ -102,13 +102,13 @@ sudo mv   helloworld_index_display.xml $index
 cd ..
 sudo sed -i s/Mageplaza/$var1/g "view/4.view.sh"
 sudo sed -i s/HelloWorld/$var2/g "view/4.view.sh"
-echo "Creando Index/Display.php"
+echo "editando Index/Display.php"
 sudo sed -i s/Mageplaza/$var1/g "view/Display.php"
 sudo sed -i s/HelloWorld/$var2/g "view/Display.php"
-echo "Block/Display.php"
+echo "editando Block/Display.php"
 sudo sed -i s/Mageplaza/$var1/g "view/Block/Display.php"
 sudo sed -i s/HelloWorld/$var2/g "view/Block/Display.php"
-echo "templates/sayhello.phtml"
+echo "editando templates/sayhello.phtml"
 sudo sed -i s/Mageplaza/$var1/g "view/sayhello.phtml"
 sudo sed -i s/HelloWorld/$var2/g "view/sayhello.phtml"
 
