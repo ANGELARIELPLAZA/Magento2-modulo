@@ -1,8 +1,8 @@
 read -p "Nombre del vendor: " var1
 read -p "Nombre del modulo: " var2
 read -p "Nombre del frontname: " var3
-var1minuscula = var1; echo $var1minuscula | tr '[:upper:]' '[:lower:]'
-var2minuscula = var2; echo $var2minuscula | tr '[:upper:]' '[:lower:]'
+echo $var1minuscula $var1 | tr '[:upper:]' '[:lower:]'
+echo $var2minuscula $var2 | tr '[:upper:]' '[:lower:]'
 echo "***************Editando el modulo***************"
 sudo sed -i s/Mageplaza/$var1/g "modulo/1.modulo.sh"
 sudo sed -i s/HelloWorld/$var2/g "modulo/1.modulo.sh"
