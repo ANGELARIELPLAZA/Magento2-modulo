@@ -17,9 +17,9 @@ sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en
 echo "Creando InstallData.php"
 #sudo cat /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/InstallData.php
 sudo cp InstallData.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
-#echo "Creando UpgradeData.php"
+echo "Creando UpgradeData.php"
 #sudo cat /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeData.php
-#sudo nano /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/UpgradeData.php
+sudo cp UpgradeData.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Setup/
 echo "Creando Model/Post.php"
 #sudo cat /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/Post.php
 sudo cp Post.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Model/
@@ -34,7 +34,6 @@ echo "Creando Index/Index.php"
 sudo cp Index.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
 
 sudo php /var/www/html/magento2/bin/magento indexer:reindex
-sudo php /var/www/html/magento2/bin/magento module:enable Mageplaza_HelloWorld
 sudo php /var/www/html/magento2/bin/magento module:status Mageplaza_HelloWorld
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
