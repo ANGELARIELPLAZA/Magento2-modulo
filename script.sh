@@ -125,7 +125,6 @@ echo "Ejecutando el controller"
 cd controller 
 sudo sh 2.control.sh
 cd ..
-
 echo "Ejecutando el model"
 cd model 
 sudo sh 3.model.sh

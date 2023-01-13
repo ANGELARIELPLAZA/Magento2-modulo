@@ -22,7 +22,7 @@ echo "Creando Index/Test.php"
 #sudo touch /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/Test.php
 sudo cp Test.php  /var/www/html/magento2/app/code/Mageplaza/HelloWorld/Controller/Index/
 
-sudo php /var/www/html/magento2/bin/magento module:status
+#sudo php /var/www/html/magento2/bin/magento module:status
 sudo php /var/www/html/magento2/bin/magento setup:upgrade
 sudo php /var/www/html/magento2/bin/magento setup:di:compile
 sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en_US -f
