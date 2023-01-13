@@ -105,6 +105,7 @@ sudo mv   helloworld_index_display.xml $index
 cd ..
 sudo sed -i s/Mageplaza/$var1/g "view/4.view.sh"
 sudo sed -i s/HelloWorld/$var2/g "view/4.view.sh"
+sudo sed -i s/helloworld/$var2minuscula/g "view/4.view.sh"
 echo "editando Index/Display.php"
 sudo sed -i s/Mageplaza/$var1/g "view/Display.php"
 sudo sed -i s/HelloWorld/$var2/g "view/Display.php"
