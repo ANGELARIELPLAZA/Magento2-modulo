@@ -2,11 +2,11 @@
 
 namespace Mageplaza\HelloWorld\Setup;
 
-use Magento\Framework\Setup\InstallDataInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\UpgradeDataInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
 
-class InstallData implements InstallDataInterface
+class UpgradeData implements UpgradeDataInterface
 {
 	protected $_postFactory;
 
@@ -15,16 +15,18 @@ class InstallData implements InstallDataInterface
 		$this->_postFactory = $postFactory;
 	}
 
-	public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+	public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
 	{
-		$data = [
-			'name'         => "How to Create SQL Setup Script in Magento 2",
-			'post_content' => "In this article, we will find out how to install and upgrade sql script for module in Magento 2. When you install or upgrade a module, you may need to change the database structure or add some new data for current table. To do this, Magento 2 provide you some classes which you can do all of them.",
-			'url_key'      => '/magento-2-module-development/magento-2-how-to-create-sql-setup-script.html',
-			'tags'         => 'magento 2,mageplaza helloworld',
-			'status'       => 1
-		];
-		$post = $this->_postFactory->create();
-		$post->addData($data)->save();
+		if (version_compare($context->getVersion(), '1.2.0', '<')) {
+			$data = [
+				'name'         => "Magento 2 Events",
+				'post_content' => "This article will talk about Events List in Magento 2. As you know, Magento 2 is using the events driven architecture which will help too much to extend the Magento functionality. We can understand this event as a kind of flag that rises when a specific situation happens. We will use an example module Mageplaza_HelloWorld to exercise this lesson.",
+				'url_key'      => '/magento-2-module-development/magento-2-events.html',
+				'tags'         => 'magento 2,mageplaza helloworld',
+				'status'       => 1
+			];
+			$post = $this->_postFactory->create();
+			$post->addData($data)->save();
+		}
 	}
 }

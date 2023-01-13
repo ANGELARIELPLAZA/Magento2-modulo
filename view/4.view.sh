@@ -7,6 +7,9 @@ sudo cp Block/Display.php /var/www/html/magento2/app/code/Mageplaza/HelloWorld/B
 echo "templates/sayhello.phtml"
 sudo cp sayhello.phtml /var/www/html/magento2/app/code/Mageplaza/HelloWorld/view/frontend/templates/
 
+
+
+sudo php /var/www/html/magento2/bin/magento setup:di:compile
 sudo php /var/www/html/magento2/bin/magento setup:static-content:deploy es_MX en_US -f
 sudo php /var/www/html/magento2/bin/magento cache:clean
 sudo php /var/www/html/magento2/bin/magento cache:flush
