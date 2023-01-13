@@ -123,7 +123,12 @@ cd ..
 echo "http://192.168.0.37/$var2/index/test"
 echo "Ejecutando el controller"
 cd controller 
-sudo sh 2.control.sh
+#sudo sh 2.control.sh
+cd ..
+
+echo "Ejecutando el model"
+cd model 
+sudo sh 3.model.sh
 cd ..
 #sudo sed -i s/$var1/Mageplaza/g "modulo/1.modulo.sh"
 #sudo sed -i s/$var2/HelloWorld/g "modulo/1.modulo.sh"
