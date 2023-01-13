@@ -143,3 +143,5 @@ cd ..
 #sudo sed -i s/$var1/Mageplaza/g "view/4.view.sh"
 #sudo sed -i s/$var2/HelloWorld/g "view/4.view.sh"
 
+git config --global user.name "Angel Ariel Plaza Acuña"
+git config --global user.email "ielc19.aplazaa@itesco.edu.mx"
