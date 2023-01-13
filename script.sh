@@ -130,6 +130,10 @@ echo "Ejecutando el model"
 cd model 
 sudo sh 3.model.sh
 cd ..
+echo "Ejecutando el view"
+cd view 
+sudo sh 4.view.sh
+cd ..
 #sudo sed -i s/$var1/Mageplaza/g "modulo/1.modulo.sh"
 #sudo sed -i s/$var2/HelloWorld/g "modulo/1.modulo.sh"
 #sudo sed -i s/$var1/Mageplaza/g "controller/2.control.sh"
