@@ -118,12 +118,12 @@ sudo sed -i s/HelloWorld/$var2/g "view/sayhello.phtml"
 
 echo "Ejecutando el modulo"
 cd modulo 
-#sudo sh 1.modulo.sh
+sudo sh 1.modulo.sh
 cd ..
 echo "http://192.168.0.37/$var2/index/test"
 echo "Ejecutando el controller"
 cd controller 
-#sudo sh 2.control.sh
+sudo sh 2.control.sh
 cd ..
 
 echo "Ejecutando el model"
